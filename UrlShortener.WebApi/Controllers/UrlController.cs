@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using UrlShortener.Core.Interfaces;
+using UrlShortener.WebApi.Models;
 
 namespace UrlShortener.WebApi.Controllers
 {
@@ -17,12 +18,8 @@ namespace UrlShortener.WebApi.Controllers
         public string ShortenLongUrl(LongUrl url)
         {
             var shortUrl = _urlService.ShortenUrl(url.Value);
-            return shortUrl;
-        }
 
-        public class LongUrl
-        {
-            public string Value { get; set; }
+            return shortUrl;
         }
     }
 }

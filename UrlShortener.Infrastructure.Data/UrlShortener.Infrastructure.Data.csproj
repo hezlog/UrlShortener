@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IUrlRecordContext.cs" />
-    <Compile Include="Mapping\UrlMapper.cs" />
+    <Compile Include="Mapping\UrlRecordMap.cs" />
     <Compile Include="Migrations\201509291239548_Initial.cs" />
     <Compile Include="Migrations\201509291239548_Initial.Designer.cs">
       <DependentUpon>201509291239548_Initial.cs</DependentUpon>
@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201509291352500_MaxLengthShortUrl.cs" />
     <Compile Include="Migrations\201509291352500_MaxLengthShortUrl.Designer.cs">
       <DependentUpon>201509291352500_MaxLengthShortUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601141456511_Vanity Url.cs" />
+    <Compile Include="Migrations\201601141456511_Vanity Url.Designer.cs">
+      <DependentUpon>201601141456511_Vanity Url.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,7 +71,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UrlShortener.Core\UrlShortener.Core.csproj">
       <Project>{ECC2AC14-0A93-4E79-BD8C-D69DC958A34A}</Project>
-      <Name>UrlService.Core</Name>
+      <Name>UrlShortener.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -81,7 +85,11 @@
     <EmbeddedResource Include="Migrations\201509291352500_MaxLengthShortUrl.resx">
       <DependentUpon>201509291352500_MaxLengthShortUrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601141456511_Vanity Url.resx">
+      <DependentUpon>201601141456511_Vanity Url.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

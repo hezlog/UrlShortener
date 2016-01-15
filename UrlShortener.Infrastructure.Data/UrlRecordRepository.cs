@@ -1,4 +1,6 @@
-﻿using UrlShortener.Core.Interfaces;
+﻿using System;
+using System.Linq;
+using UrlShortener.Core.Interfaces;
 using UrlShortener.Core.Objects;
 
 namespace UrlShortener.Infrastructure.Data
@@ -18,7 +20,15 @@ namespace UrlShortener.Infrastructure.Data
                 return false;
 
             _urlRecordContext.Records.Add(record);
+
             return _urlRecordContext.SaveChanges() > 0;
+        }
+
+        public UrlRecord GetUrlRecordByProviderReference(string linkId)
+        {
+            return string.IsNullOrEmpty(linkId)
+                ? null
+                : _urlRecordContext.Records.FirstOrDefault(r => r.ProviderReference == linkId);
         }
     }
 }

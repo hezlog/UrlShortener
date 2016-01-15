@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using UrlShortener.Core.Interfaces;
 using UrlShortener.Core.Objects;
+using UrlShortener.Infrastructure.Data.Mapping;
 
 namespace UrlShortener.Infrastructure.Data
 {
@@ -22,9 +23,8 @@ namespace UrlShortener.Infrastructure.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UrlRecord>()
-                .Property(x => x.ShortUrl)
-                .HasMaxLength(50);
+            //Address
+            modelBuilder.Configurations.Add(new UrlRecordMap());
         }
     }
 }
