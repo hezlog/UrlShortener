@@ -6,7 +6,7 @@ using UrlShortener.Core.Objects;
 using UrlShortener.Core.Services;
 using UrlShortener.Infrastructure;
 using UrlShortener.Infrastructure.Data;
-using UrlShortner.Infrastructure.Bitly;
+using UrlShortener.Infrastructure.Bitly;
 
 namespace UrlShortener.DependencyInjection
 {
