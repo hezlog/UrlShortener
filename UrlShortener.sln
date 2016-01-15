@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Infrastructure
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9046BB45-7913-4931-ABB5-476A3E4D84EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortner.Infrastructure.Bitly", "UrlShortner.Infrastructure.Bitly\UrlShortner.Infrastructure.Bitly.csproj", "{A40D6B90-58EE-484D-9CDD-42BC8CD6E79E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Infrastructure.Bitly", "UrlShortener.Infrastructure.Bitly\UrlShortener.Infrastructure.Bitly.csproj", "{A40D6B90-58EE-484D-9CDD-42BC8CD6E79E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -100,7 +100,7 @@
       <Project>{809D2363-C504-4842-A563-B36319E7541A}</Project>
       <Name>UrlShortener.Infrastructure.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UrlShortner.Infrastructure.Bitly\UrlShortner.Infrastructure.Bitly.csproj">
+    <ProjectReference Include="..\UrlShortener.Infrastructure.Bitly\UrlShortener.Infrastructure.Bitly.csproj">
       <Project>{A40D6B90-58EE-484D-9CDD-42BC8CD6E79E}</Project>
       <Name>UrlShortner.Infrastructure.Bitly</Name>
     </ProjectReference>

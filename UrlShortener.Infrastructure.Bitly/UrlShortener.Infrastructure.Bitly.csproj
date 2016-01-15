@@ -7,8 +7,8 @@
     <ProjectGuid>{A40D6B90-58EE-484D-9CDD-42BC8CD6E79E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UrlShortner.Infrastructure.Bitly</RootNamespace>
-    <AssemblyName>UrlShortner.Infrastructure.Bitly</AssemblyName>
+    <RootNamespace>UrlShortener.Infrastructure.Bitly</RootNamespace>
+    <AssemblyName>UrlShortener.Infrastructure.Bitly</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

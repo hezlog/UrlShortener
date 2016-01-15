@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Linq;
 using Conditions.Guards;
 using UrlShortener.Core.Interfaces;
 using UrlShortener.Core.Objects;
-using UrlShortner.Infrastructure.Bitly.Objects;
-using BitlyShortenResponse = UrlShortner.Infrastructure.Bitly.Objects.BitlyShortenResponse;
+using BitlyShortenResponse = UrlShortener.Infrastructure.Bitly.Objects.BitlyShortenResponse;
 
-namespace UrlShortner.Infrastructure.Bitly
+namespace UrlShortener.Infrastructure.Bitly
 {
     public class BitlyUrlShortner : IUrlShortener
     {

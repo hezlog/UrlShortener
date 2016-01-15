@@ -1,4 +1,4 @@
-﻿namespace UrlShortner.Infrastructure.Bitly.Objects
+﻿namespace UrlShortener.Infrastructure.Bitly.Objects
 {
     public class BitlyShortenResponse
     {
