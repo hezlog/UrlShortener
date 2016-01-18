@@ -30,15 +30,16 @@ namespace UrlShortener.Core.Services
 
             _urlRecordRepository.CreateUrlRecord(url);
 
-            return url.VanityShortUrl;
+            return _shortUrlSettings.VanityUrlEnabled 
+                ? url.VanityShortUrl
+                : url.ShortUrl;
         }
 
         public string GetShortUrl(string linkId)
         {
-            if (linkId.IsNullOrEmpty())
-                return _shortUrlSettings.HomepageUrl;
-
-            return UrlFactory.BuildShortUrl(_shortUrlSettings.ExternalUrl, linkId);
+            return linkId.IsNullOrEmpty()
+                ? _shortUrlSettings.HomepageUrl
+                : UrlFactory.BuildShortUrl(_shortUrlSettings.ExternalUrl, linkId);
         }
     }
 }

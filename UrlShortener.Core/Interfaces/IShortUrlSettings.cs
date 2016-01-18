@@ -3,7 +3,8 @@
     public interface IShortUrlSettings
     {
         string HomepageUrl { get; }
-        string VanityUrl { get; }
         string ExternalUrl { get; }
+        bool VanityUrlEnabled { get; }
+        string VanityUrl { get; }
     }
 }
