@@ -206,11 +206,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="ConnectionStrings.config" />
+    <Content Include="PrivateSettings.config" />
+    <None Include="Properties\PublishProfiles\letme-urlshortener - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\letme-urlshortener - Web Deploy.pubxml" />
+    <Content Include="Security.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
