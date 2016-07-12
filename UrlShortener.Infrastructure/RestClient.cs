@@ -63,7 +63,15 @@ namespace UrlShortener.Infrastructure
 
         public T Deserialize<T>(string json)
         {
-            var obj = JsonConvert.DeserializeObject<T>(json);
+            T obj;
+            try
+            {
+                obj = JsonConvert.DeserializeObject<T>(json);
+            }
+            catch (Exception)
+            {
+                return default(T);
+            }
 
             return obj;
         }

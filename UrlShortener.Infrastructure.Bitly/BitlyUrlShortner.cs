@@ -31,6 +31,9 @@ namespace UrlShortener.Infrastructure.Bitly
 
             var bitlyResponse = _restClient.Deserialize<BitlyShortenResponse>(json);
 
+            if (bitlyResponse == null)
+                return new ShortUrlResponse {Reference = string.Empty, ShortUrl = longUrl};
+
             return new ShortUrlResponse {Reference = bitlyResponse.data.hash, ShortUrl = bitlyResponse.data.url};
         }
     }
