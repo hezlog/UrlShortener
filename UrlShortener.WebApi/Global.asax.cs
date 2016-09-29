@@ -22,7 +22,6 @@ namespace UrlShortener.WebApi
         private static void ConfigureSimpleInjectorForMvc()
         {
             var container = new Container();
-            new MvcRegistry().RegisterServices(container);
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
 
         }

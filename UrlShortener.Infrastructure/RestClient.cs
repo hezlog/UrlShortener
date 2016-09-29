@@ -1,16 +1,29 @@
 ﻿using System;
 using System.Net;
+using Conditions.Guards;
 using Newtonsoft.Json;
 using RestSharp;
+using UrlShortener.Core.Interfaces;
 
 namespace UrlShortener.Infrastructure
 {
     public class RestClient : Core.Interfaces.IRestClient
     {
+        private readonly IConfigurationService _configurationService;
+
+        public RestClient(IConfigurationService configurationService)
+        {
+            Check.If(configurationService).IsNotNull();
+
+            _configurationService = configurationService;
+        }
+
         public string Get(Uri uri)
         {
             var client = new RestSharp.RestClient(uri);
             var request = new RestRequest();
+            request.AddHeader("apikey", _configurationService.GetSetting("RebrandlyApiKey"));
+
             var response = client.Execute(request);
 
             return response.StatusCode == HttpStatusCode.OK ? response.Content : "";
@@ -19,46 +32,31 @@ namespace UrlShortener.Infrastructure
         public string Post(Uri uri)
         {
             var client = new RestSharp.RestClient(uri);
+
             var request = new RestRequest { RequestFormat = DataFormat.Json };
             request.Method = Method.POST;
+            request.AddHeader("apikey", _configurationService.GetSetting("RebrandlyApiKey"));
 
             var response = client.Execute(request);
 
-            if (response == null) return "";
-
-            foreach (var item in response.Headers)
-            {
-                if (item.Name == "Location")
-                {
-                    var url = item.Value.ToString();
-                    var pos = url.LastIndexOf("/", StringComparison.Ordinal) + 1;
-                    return url.Substring(pos, url.Length - pos);
-                }
-            }
-            return "";
+            return response.StatusCode == HttpStatusCode.OK ? response.Content : "";
         }
 
         public string Post<T>(Uri uri, T obj)
         {
-            var client = new RestSharp.RestClient();
-            var request = new RestRequest {RequestFormat = DataFormat.Json};
+            var client = new RestSharp.RestClient
+            {
+                BaseUrl = uri
+            };
+
+            var request = new RestRequest { RequestFormat = DataFormat.Json };
             request.AddBody(obj);
             request.Method = Method.POST;
+            request.AddHeader("apikey", _configurationService.GetSetting("RebrandlyApiKey"));
 
             var response = client.Execute(request);
 
-            if (response == null) return "";
-
-            foreach (var item in response.Headers)
-            {
-                if (item.Name == "Location")
-                {
-                    var url = item.Value.ToString();
-                    var pos = url.LastIndexOf("/", StringComparison.Ordinal) + 1;
-                    return url.Substring(pos, url.Length - pos);
-                }
-            }
-            return "";
+            return response.StatusCode == HttpStatusCode.OK ? response.Content : "";
         }
 
         public T Deserialize<T>(string json)

@@ -6,7 +6,7 @@ using UrlShortener.Core.Objects;
 using UrlShortener.Core.Services;
 using UrlShortener.Infrastructure;
 using UrlShortener.Infrastructure.Data;
-using UrlShortener.Infrastructure.Bitly;
+using UrlShortener.Infrastructure.Rebrandly;
 
 namespace UrlShortener.DependencyInjection
 {
@@ -28,7 +28,7 @@ namespace UrlShortener.DependencyInjection
 
             //External Service
             container.Register<IRestClient, RestClient>();
-            container.Register<IUrlShortener, BitlyUrlShortner>();
+            container.Register<IUrlShortener, RebrandlyUrlShortener>();
 
             //Data
             container.Register<IUrlRecordRepository, UrlRecordRepository>();

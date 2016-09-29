@@ -9,10 +9,10 @@ namespace UrlShortener.Core.Factories
         {
             return new UrlRecord
             {
-                ProviderReference = response.Reference,
+                ProviderReference = response.id,
                 LongUrl = longUrl,
-                ShortUrl = response.ShortUrl,
-                VanityShortUrl = $"{vanityUrl}/{response.ShortUrl.GetUrlSuffix()}"
+                ShortUrl = response.shortUrl,
+                VanityShortUrl = $"{vanityUrl}/{response.shortUrl.GetUrlSuffix()}"
             };
         }
     }

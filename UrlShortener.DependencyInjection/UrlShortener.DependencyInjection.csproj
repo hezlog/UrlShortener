@@ -79,7 +79,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MvcRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebApiRegistry.cs" />
   </ItemGroup>
@@ -92,6 +91,10 @@
       <Project>{ECC2AC14-0A93-4E79-BD8C-D69DC958A34A}</Project>
       <Name>UrlShortener.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UrlShortener.Infrastructure.Rebrandly\UrlShortener.Infrastructure.Rebrandly.csproj">
+      <Project>{012599A6-AAEC-48F6-AC1B-F618AC166DC7}</Project>
+      <Name>UrlShortener.Infrastructure.Rebrandly</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UrlShortener.Infrastructure\UrlShortener.Infrastructure.csproj">
       <Project>{e0c5ba03-fb80-464c-84db-461471c9c17c}</Project>
       <Name>UrlShortener.Infrastructure</Name>
@@ -99,10 +102,6 @@
     <ProjectReference Include="..\UrlShortener.Infrastructure.Data\UrlShortener.Infrastructure.Data.csproj">
       <Project>{809D2363-C504-4842-A563-B36319E7541A}</Project>
       <Name>UrlShortener.Infrastructure.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UrlShortener.Infrastructure.Bitly\UrlShortener.Infrastructure.Bitly.csproj">
-      <Project>{A40D6B90-58EE-484D-9CDD-42BC8CD6E79E}</Project>
-      <Name>UrlShortner.Infrastructure.Bitly</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
